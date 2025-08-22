@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: task-management
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+    
+  # Configuration de la base de données avec valeurs directes
+  datasource:
+    url: jdbc:postgresql://localhost:5432/maher_db?currentSchema=taskmanagement
+    username: maher
+    password: maher
+    driver-class-name: org.postgresql.Driver
+    
+  # Configuration JPA et Hibernate
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: taskmanagement
+    hibernate:
+      ddl-auto: update
+
+
+
